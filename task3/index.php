@@ -1,6 +1,5 @@
 <?php
-// Отправляем браузеру правильную кодировку,
-// файл index.php должен быть в кодировке UTF-8 без BOM.
+include('config.php');
 header('Content-Type: text/html; charset=UTF-8');
 
 // В суперглобальном массиве $_SERVER PHP сохраняет некторые заголовки запроса HTTP
@@ -89,10 +88,7 @@ if ($errors) {
 
 // Сохранение в базу данных.
 
-$user = 'u67317';
-$pass = '3462139';
-$db = new PDO('mysql:host=localhost;dbname=u67317', $user, $pass,
-[PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]); 
+$db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD, [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 // Подготовленный запрос. Не именованные метки.
 try {
