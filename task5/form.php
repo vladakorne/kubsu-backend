@@ -37,6 +37,9 @@ if (!empty($messages)) {
 
   print('</div>');
 }
+
+
+?>
 <?php
 if (!empty($_COOKIE[session_name()]) && !empty($_SESSION['login'])){
     echo '
@@ -56,8 +59,6 @@ else
     </form>
     </div>
 ';
-?>
-
 ?>
     <div id="forma" class="col-7">
         <form id="form1" action="" method="POST">
